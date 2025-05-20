@@ -8,10 +8,9 @@
 
 1.  **克隆仓库** (如果您是从版本控制系统获取):
     ```bash
-    git clone https://github.com/your-username/your-atm-project.git
-    cd your-atm-project
+    git clone https://github.com/Ziranate/ATM
+    cd ATM
     ```
-    *请将 `https://github.com/your-username/your-atm-project.git` 替换为实际的仓库地址。如果项目不在版本控制中，请直接进入项目目录。*
 
 2.  **环境要求**:
     *   Python 3.12
