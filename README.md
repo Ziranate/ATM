@@ -8,8 +8,8 @@
 
 1.  **克隆仓库** (如果您是从版本控制系统获取):
     ```bash
-    git clone [<仓库地址>](https://github.com/Ziranate/ATM)
-    cd <项目目录>
+    git clone https://github.com/Ziranate/ATM
+    cd ATM
     ```
 
 
