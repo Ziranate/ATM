@@ -4,7 +4,7 @@ from PyQt5.QtWidgets import (QMainWindow, QWidget, QPushButton,
                              QSizePolicy)
 from PyQt5.QtCore import Qt, pyqtSignal, QObject, QSize
 from PyQt5.QtGui import QFont, QIcon, QPalette, QColor
-from pythonProject.CQU.Semester2.ComputerNetworking.ATM.atm_client import ATMClient
+from .atm_client import ATMClient
 
 class ATMSignals(QObject):
     """自定义信号类，用于在GUI和客户端逻辑之间传递事件"""

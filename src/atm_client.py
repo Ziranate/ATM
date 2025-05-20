@@ -35,7 +35,7 @@ class ATMClient:
             logger.addHandler(handler)
 
             # 也可以添加文件处理器
-            file_handler = logging.FileHandler('atm_client.log')
+            file_handler = logging.FileHandler('logs/atm_client.log')
             file_handler.setFormatter(formatter)
             logger.addHandler(file_handler)
 

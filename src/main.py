@@ -1,7 +1,7 @@
 import sys
 from PyQt5.QtWidgets import QApplication
-from atm_gui import ATMGUI
-from atm_client import ATMClient
+from .atm_gui import ATMGUI
+from .atm_client import ATMClient
 
 
 def main():

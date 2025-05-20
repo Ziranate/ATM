@@ -9,13 +9,13 @@ import datetime
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    filename='server.log',
+    filename='logs/server.log',
     filemode='a'
 )
 logger = logging.getLogger('ATMServer')
 
 # 用户数据存储路径
-DATA_FILE = 'users.json'
+DATA_FILE = 'data/users.json'
 
 
 class ATMServer:
