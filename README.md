@@ -15,8 +15,18 @@
 
 2.  **环境要求**:
     *   Python 3.12
+    *   推荐使用 requirements.txt 文件自动安装依赖。
 
-    *   使用标准 Python 库和 PyQt5 即可运行。
+3.  **安装依赖**:
+    在项目根目录下运行：
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+    > 如果遇到 PyQt5 安装问题，建议先升级 pip ：
+    > ```bash
+    > python -m pip install --upgrade pip
+    > ```
 
 ## 3. 使用说明
 
@@ -47,18 +57,19 @@ python -m src.main
 ## 5. 目录结构
 ```
 .
-├── src/
-│   ├── __init__.py
-│   ├── atm_client.py
-│   ├── atm_gui.py
-│   ├── server.py
-│   └── main.py
 ├── data/
 │   └── users.json
 ├── logs/
 │   ├── atm_client.log
 │   └── server.log
-└── README.md
+├── src/
+│   ├── __init__.py
+│   ├── atm_client.py
+│   ├── atm_gui.py
+│   ├── main.py
+│   └── server.py
+├── README.md
+└── requirements.txt
 ```
 
 ## 6. 协议说明：RFC20232023协议
