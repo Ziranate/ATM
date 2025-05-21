@@ -68,7 +68,7 @@ python -m src.main
 │   ├── atm_gui.py
 │   ├── main.py
 │   └── server.py
-|── .gitignore
+├── .gitignore
 ├── README.md
 └── requirements.txt
 ```
