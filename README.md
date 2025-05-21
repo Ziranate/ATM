@@ -57,20 +57,21 @@ python -m src.main
 ## 5. 目录结构
 ```
 .
-├── data/
-│   └── users.json
-├── logs/
-│   ├── atm_client.log
-│   └── server.log
-├── src/
-│   ├── __init__.py
-│   ├── atm_client.py
-│   ├── atm_gui.py
-│   ├── main.py
-│   └── server.py
-├── .gitignore
-├── README.md
-└── requirements.txt
+├── data/                 
+│   └── users.json        # 存储所有用户信息和账户数据
+├── logs/                 
+│   ├── atm_client.log    # 客户端操作日志
+│   └── server.log        # 服务器操作日志
+├── src/                 
+│   ├── __init__.py       # Python 包初始化文件
+│   ├── atm_client.py     # ATM 客户端核心逻辑
+│   ├── atm_gui.py        # ATM 图形界面实现
+│   ├── main.py           # 客户端程序入口
+│   └── server.py         # 服务器端主程序
+├── .gitignore            
+├── README.md             
+├── requirements.txt      
+└── RFC20232023.md        # RFC20232023协议
 ```
 
 ## 6. 协议说明：RFC20232023协议
@@ -92,7 +93,3 @@ python -m src.main
 | `401 sp ERROR!`     | 操作失败（密码错误、余额不足等）    |
 | `AMNT :<amnt>`      | 返回余额查询结果                    |
 | `BYE`              | 操作结束，指示ATM显示欢迎界面       |
-
----
-
-本项目已配置 .gitignore 文件，自动忽略如 src/__pycache__/ 下的 .pyc 等本地环境生成的临时文件。
