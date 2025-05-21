@@ -68,6 +68,7 @@ python -m src.main
 │   ├── atm_gui.py
 │   ├── main.py
 │   └── server.py
+|── .gitignore
 ├── README.md
 └── requirements.txt
 ```
@@ -91,3 +92,7 @@ python -m src.main
 | `401 sp ERROR!`     | 操作失败（密码错误、余额不足等）    |
 | `AMNT :<amnt>`      | 返回余额查询结果                    |
 | `BYE`              | 操作结束，指示ATM显示欢迎界面       |
+
+---
+
+本项目已配置 .gitignore 文件，自动忽略如 src/__pycache__/ 下的 .pyc 等本地环境生成的临时文件。
