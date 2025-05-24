@@ -66,6 +66,7 @@ python -m src.main
 │   ├── __init__.py       # Python 包初始化文件
 │   ├── atm_client.py     # ATM 客户端核心逻辑
 │   ├── atm_gui.py        # ATM 图形界面实现
+│   ├── bank_icon.svg     # 窗口图标
 │   ├── main.py           # 客户端程序入口
 │   └── server.py         # 服务器端主程序
 ├── .gitignore            

@@ -40,15 +40,14 @@ class ATMGUI(QMainWindow):
         # 初始化UI
         self.setup_ui()
         self.setup_styles()
-        self.setup_dark_mode(False)  # 默认浅色模式
 
     def setup_ui(self):
         """设置主界面"""
-        self.setWindowTitle("智能ATM终端")
+        self.setWindowTitle("ATM终端")
         self.setMinimumSize(900, 650)
 
         # 设置窗口图标
-        self.setWindowIcon(QIcon(":atm_icon.png"))  # 使用Qt资源系统中的图标
+        self.setWindowIcon(QIcon("src/bank_icon.svg"))  # 使用Qt资源系统中的图标
 
         # 创建堆叠部件用于页面切换
         self.stack = QStackedWidget()
@@ -74,7 +73,7 @@ class ATMGUI(QMainWindow):
                 background-color: white;
                 border-radius: 12px;
                 border: none;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+                /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); */
             }
             QLabel {
                 color: #2d3748;
@@ -107,83 +106,6 @@ class ATMGUI(QMainWindow):
                 opacity: 0.8;
             }
         """)
-
-    def setup_dark_mode(self, dark):
-        """设置深色/浅色模式"""
-        palette = self.palette()
-
-        if dark:
-            # 深色模式配色
-            palette.setColor(QPalette.Window, QColor("#1a202c"))
-            palette.setColor(QPalette.WindowText, QColor("#e2e8f0"))
-            palette.setColor(QPalette.Base, QColor("#2d3748"))
-            palette.setColor(QPalette.AlternateBase, QColor("#2d3748"))
-            palette.setColor(QPalette.ToolTipBase, QColor("#e2e8f0"))
-            palette.setColor(QPalette.ToolTipText, QColor("#e2e8f0"))
-            palette.setColor(QPalette.Text, QColor("#e2e8f0"))
-            palette.setColor(QPalette.Button, QColor("#2d3748"))
-            palette.setColor(QPalette.ButtonText, QColor("#e2e8f0"))
-            palette.setColor(QPalette.BrightText, Qt.red)
-            palette.setColor(QPalette.Highlight, QColor("#4299e1"))
-            palette.setColor(QPalette.HighlightedText, Qt.white)
-
-            self.setStyleSheet("""
-                QMainWindow {
-                    background-color: #1a202c;
-                }
-                QFrame#card {
-                    background-color: #2d3748;
-                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-                }
-                QLabel {
-                    color: #e2e8f0;
-                }
-                QLineEdit {
-                    background-color: #4a5568;
-                    border: 1px solid #4a5568;
-                    color: #e2e8f0;
-                }
-                QLineEdit:focus {
-                    border: 1px solid #4299e1;
-                }
-            """)
-        else:
-            # 浅色模式配色
-            palette.setColor(QPalette.Window, QColor("#f5f7fa"))
-            palette.setColor(QPalette.WindowText, QColor("#2d3748"))
-            palette.setColor(QPalette.Base, Qt.white)
-            palette.setColor(QPalette.AlternateBase, QColor("#f7fafc"))
-            palette.setColor(QPalette.ToolTipBase, Qt.white)
-            palette.setColor(QPalette.ToolTipText, QColor("#2d3748"))
-            palette.setColor(QPalette.Text, QColor("#2d3748"))
-            palette.setColor(QPalette.Button, QColor("#edf2f7"))
-            palette.setColor(QPalette.ButtonText, QColor("#2d3748"))
-            palette.setColor(QPalette.BrightText, Qt.red)
-            palette.setColor(QPalette.Highlight, QColor("#4299e1"))
-            palette.setColor(QPalette.HighlightedText, Qt.white)
-
-            self.setStyleSheet("""
-                QMainWindow {
-                    background-color: #f5f7fa;
-                }
-                QFrame#card {
-                    background-color: white;
-                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-                }
-                QLabel {
-                    color: #2d3748;
-                }
-                QLineEdit {
-                    background-color: white;
-                    border: 1px solid #e2e8f0;
-                    color: #2d3748;
-                }
-                QLineEdit:focus {
-                    border: 1px solid #4299e1;
-                }
-            """)
-
-        self.setPalette(palette)
 
     def create_welcome_page(self):
         """创建欢迎页面"""
@@ -230,10 +152,10 @@ class ATMGUI(QMainWindow):
         input_layout.setContentsMargins(0, 0, 0, 0)
         input_layout.setSpacing(8)
 
-        label = QLabel("请输入您的银行卡号:")
-        label.setStyleSheet("font-size: 16px;")
+        label = QLabel("请输入您的ID:")
+        label.setStyleSheet("font-size: 20px;")
         self.card_input = QLineEdit()
-        self.card_input.setPlaceholderText("例如: 6217 0000 0000 0000")
+        self.card_input.setPlaceholderText("例如: 2023126320231263")
         self.card_input.setFixedHeight(50)
         self.card_input.setStyleSheet("font-size: 18px;")
 
@@ -653,12 +575,29 @@ class ATMGUI(QMainWindow):
         msg.setIcon(QMessageBox.Critical)
         msg.setWindowTitle(title)
         msg.setText(message)
+
         msg.setStyleSheet("""
             QMessageBox {
                 background-color: white;
             }
             QLabel {
                 color: #2d3748;
+                font-size: 18px;
+                qproperty-alignment: 'AlignVCenter | AlignLeft';
+                margin-top: 18px;
+            }
+            QPushButton {
+                background-color: #4299e1;
+                color: white;
+                font-size: 16px;
+                font-weight: 600;
+                border-radius: 8px;
+                min-width: 80px;
+                min-height: 36px;
+                padding: 6px 18px;
+            }
+            QPushButton:hover {
+                background-color: #3182ce;
             }
         """)
         msg.exec_()

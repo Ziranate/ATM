@@ -8,7 +8,7 @@ def main():
     app = QApplication(sys.argv)
 
     # 创建ATM客户端实例
-    client = ATMClient(host='localhost', port=2525)
+    client = ATMClient(host='10.244.203.114', port=2525)
 
     # 创建GUI并传入客户端实例
     gui = ATMGUI(client)

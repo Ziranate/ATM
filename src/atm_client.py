@@ -34,8 +34,8 @@ class ATMClient:
             handler.setFormatter(formatter)
             logger.addHandler(handler)
 
-            # 也可以添加文件处理器
-            file_handler = logging.FileHandler('logs/atm_client.log')
+            # 也可以添加文件处理器，指定utf-8编码
+            file_handler = logging.FileHandler('logs/atm_client.log', encoding='utf-8')
             file_handler.setFormatter(formatter)
             logger.addHandler(file_handler)
 

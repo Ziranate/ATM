@@ -10,7 +10,8 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     filename='logs/server.log',
-    filemode='a'
+    filemode='a',
+    encoding='utf-8'  # 指定日志文件编码为utf-8
 )
 logger = logging.getLogger('ATMServer')
 
