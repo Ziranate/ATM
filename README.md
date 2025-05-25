@@ -59,6 +59,9 @@ python -m src.main
 .
 ├── data/                 
 │   └── users.json        # 存储所有用户信息和账户数据
+├── doc/                  
+│   ├── RFC20232023.md    # RFC20232023协议文档
+│   └── 作业2-实验报告.pdf # 实验报告文档
 ├── logs/                 
 │   ├── atm_client.log    # 客户端操作日志
 │   └── server.log        # 服务器操作日志
@@ -71,8 +74,7 @@ python -m src.main
 │   └── server.py         # 服务器端主程序
 ├── .gitignore            
 ├── README.md             
-├── requirements.txt      
-└── RFC20232023.md        # RFC20232023协议
+└── requirements.txt      
 ```
 
 ## 6. 协议说明：RFC20232023协议
